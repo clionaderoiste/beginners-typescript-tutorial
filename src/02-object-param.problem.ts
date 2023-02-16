@@ -1,6 +1,26 @@
 import { expect, it } from "vitest";
 
-export const addTwoNumbers = (params) => {
+/*
+Original solution 
+export const addTwoNumbers = (params : {first: number, second: number}) => {
+  return params.first + params.second;
+};
+
+But you can use Type or Interface to make it more readable
+interface NumbersToBeAdded {
+  first: number;
+  second: number;
+}
+
+It doesn't matter if you use Type or Interface, it's just a matter of preference
+*/
+
+type NumbersToBeAdded = {
+  first: number;
+  second: number;
+};
+
+export const addTwoNumbers = (params : NumbersToBeAdded) => {
   return params.first + params.second;
 };
 
