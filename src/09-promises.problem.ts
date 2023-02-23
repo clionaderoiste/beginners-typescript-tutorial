@@ -8,8 +8,8 @@ interface LukeSkywalker {
   birth_year: string;
   gender: string;
 }
-
-export const fetchLukeSkywalker = async (): LukeSkywalker => {
+//see solution 3 as preferred
+export const fetchLukeSkywalker = async (): Promise<LukeSkywalker> => {
   const data = await fetch("https://swapi.dev/api/people/1").then((res) => {
     return res.json();
   });
